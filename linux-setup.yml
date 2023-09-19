@@ -5,8 +5,8 @@
   gather_facts: false
 
   tasks:
-    - name: Add vim 9 repo
-      ansible.builtin.repo:
+    - name: Add vim repo
+      ansible.builtin.apt_repository:
         repo: ppa:jonathonf/vim
         state: present
       become: true
@@ -60,6 +60,12 @@
           dest: ~/.ssh/authorized_keys
           mode: 0400
 
+    - name: Create directories
+      ansible.builtin.file:
+        path: ~/.vim/colors
+        state: directory
+        mode: "0755"
+
     - name: Copy user files
       ansible.builtin.copy:
         src: "{{ item.src }}"
@@ -77,7 +83,7 @@
         - src: files/.vimrc
           dest: ~/.vimrc
           mode: 0664
-        - src: files/.atom-dark-256.vim
+        - src: files/atom-dark-256.vim
           dest: ~/.vim/colors/atom-dark-256.vim
           mode: 0664
         # zsh
