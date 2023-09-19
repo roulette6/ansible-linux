@@ -1,0 +1,46 @@
+# physical devices
+
+Host dmz-ubu
+  HostName dmz-ubu.jm
+  User ubuntu
+
+Host jm-macbook
+  HostName jm-macbook.jm
+
+Host jm-pc
+  HostName jm-pc.jm
+
+Host mini
+  HostName mini.jm
+  User josue
+
+Host nas1
+  HostName nas1.jm
+  User josue-admin
+
+Host prox1
+  HostName prox1.jm
+  User root
+
+Host prox2
+  HostName prox1.jm
+  User root
+
+# virtual devices
+
+Host eve1
+  HostName eve1.vm.jm
+  User root
+
+Host eve1-centos-vm
+    HostName 192.168.128.102
+
+Host ubu1
+  HostName ubu1.vm.jm
+
+Host ubu2
+  HostName ubu2.vm.jm
+
+Host pydev
+  user josue
+  HostName pydev.vm.jm

@@ -44,21 +44,19 @@
         - name: user.email
           value: "josue_dev@fastmail.com"
 
-    - name: Copy authorized keys and sudoers
+    - name: Set sudoers
       ansible.builtin.copy:
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"
         mode: "{{ item.mode }}"
       become: true
+      tags:
+        - sudoers
       loop:
         # SUDO w/o password
         - src: files/sodoers
           dest: /etc/sudoers.d/josue-by-ansible
-          mode: 0400
-        # SSH keys
-        - src: files/authorized_keys
-          dest: ~/.ssh/authorized_keys
-          mode: 0400
+          mode: "0440"
 
     - name: Create directories
       ansible.builtin.file:
@@ -71,25 +69,34 @@
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"
         mode: "{{ item.mode }}"
+      tags:
+        - user-files
       loop:
+        # SSH stuff
+        - src: files/authorized_keys
+          dest: ~/.ssh/authorized_keys
+          mode: "0700"
+        - src: files/ssh_config
+          dest: ~/.ssh/config
+          mode: "0700"
         # aliases and helpers
         - src: files/aliases
           dest: ~/.aliases
-          mode: 0664
+          mode: "0664"
         - src: files/helpers
           dest: ~/.helpers
-          mode: 0664
+          mode: "0664"
         # vim
         - src: files/.vimrc
           dest: ~/.vimrc
-          mode: 0664
+          mode: "0664"
         - src: files/atom-dark-256.vim
           dest: ~/.vim/colors/atom-dark-256.vim
-          mode: 0664
+          mode: "0664"
         # zsh
         - src: files/.zshrc
           dest: ~/.zshrc
-          mode: 0664
+          mode: "0664"
         - src: files/.p10k.zsh
           dest: ~/.p10k.zsh
-          mode: 0664
+          mode: "0664"
