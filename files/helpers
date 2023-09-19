@@ -1,0 +1,14 @@
+mkcd() {
+    if [ $# -ne 1 ]; then
+        echo "Usage: create_and_cd <directory_name>"
+        return 1
+    fi
+
+    local directory="$1"
+
+    if [ ! -d "$directory" ]; then
+        mkdir -p "$directory"  # Create the directory if it doesn't exist
+    fi
+
+    cd "$directory" || return 1  # Change to the directory, or return an error if it fails
+}

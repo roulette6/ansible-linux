@@ -1,0 +1,32 @@
+---
+all:
+  children:
+    linux:
+      hosts:
+        wsl:
+          ansible_host: 127.0.0.1
+        mini:
+          ansible_host: mini.jm
+        dmz-ubu:
+          ansible_host: dmz-ubu.jm
+        ubu1:
+          ansible_host: ubu1.vm.jm
+        ubu2:
+          ansible_host: ubu2.vm.jm
+    ubuntu:
+      hosts:
+        mini:
+        dmz-ubu:
+        ubu1:
+        ubu2:
+    aci:
+      hosts:
+        aci-sandbox:
+          host_fqdn: aci.vm.jm
+          ansible_user: admin
+          ansible_password: 1234QWer
+    windows:
+      hosts:
+        jm-pc:
+          ansible_user: josue
+

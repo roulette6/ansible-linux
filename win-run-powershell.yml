@@ -1,0 +1,14 @@
+---
+- name: Run PowerShell Script on Windows Host
+  hosts: jm-pc
+  gather_facts: false
+
+  tasks:
+    - name: Run PowerShell script
+      win_command: C:\Users\josue\code\powershell\test-conn.ps1
+      register: result
+
+    - name: Display run results
+      debug:
+        var: result
+
