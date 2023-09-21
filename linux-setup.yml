@@ -17,8 +17,27 @@
           - exa
           - zsh
           - vim=2:9.0.0749-0york0~22.04
+          - tmux
         state: present
+        update_cache: true
       become: true
+
+    - name: Install oh-my-zsh and power-level-10k
+      ansible.builtin.shell: |
+        if [! -d "/home/josue/.oh-my-zsh"]; then
+          sh -c "$(curl -fsSL https://raw.\
+          githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+        fi
+        if [! -d "/home/josue/.oh-my-zsh/custom/themes/powerlevel10k"]; then
+          git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+          /home/josue/.oh-my-zsh/custom/themes/powerlevel10k
+        fi
+
+    - name: Change shell to zsh
+      user:
+        name: josue
+        shell: /bin/zsh
+      become: yes
 
     - name: Install vim Airline
       ansible.builtin.git:

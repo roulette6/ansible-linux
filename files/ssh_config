@@ -2,7 +2,6 @@
 
 Host dmz-ubu
   HostName dmz-ubu.jm
-  User ubuntu
 
 Host jm-macbook
   HostName jm-macbook.jm
