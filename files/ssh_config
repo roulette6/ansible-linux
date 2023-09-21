@@ -1,5 +1,4 @@
 # physical devices
-
 Host dmz-ubu
   HostName dmz-ubu.jm
 
@@ -26,7 +25,6 @@ Host prox2
   User root
 
 # virtual devices
-
 Host eve1
   HostName eve1.vm.jm
   User root
@@ -43,3 +41,12 @@ Host ubu2
 Host pydev
   user josue
   HostName pydev.vm.jm
+
+Host c1-cp1
+  HostName c1-cp1.vm.jm
+
+Host c1-node1
+  HostName c1-node1.vm.jm
+
+Host c1-node2
+  HostName c1-node2.vm.jm

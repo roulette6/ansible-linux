@@ -98,6 +98,10 @@
         - src: files/helpers
           dest: ~/.helpers
           mode: "0664"
+        # tmux
+        - src: files/tmux.conf
+          dest: ~/.tmux.conf
+          mode: "0664"
         # vim
         - src: files/.vimrc
           dest: ~/.vimrc
