@@ -28,12 +28,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-if [ -e "~/.aliases" ]; then
-    source "~/.aliases"
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
 fi
 
-if [ -e "~/.helpers" ]; then
-    source "~/.helpers"
+if [ -f ~/.helpers ]; then
+    source ~/.helpers
 fi
 
 
