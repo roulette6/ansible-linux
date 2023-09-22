@@ -24,15 +24,23 @@
 
     - name: Change shell to zsh
       user:
-        name: josue
+        name: "{{ item }}"
         shell: /bin/zsh
-      become: yes
+      become: true
+      tags:
+        - zshell
+        - root
+      loop:
+        - josue
+        - root
 
-    - name: Install vim Airline and oh-my-zsh
+    - name: Install vim Airline and oh-my-zsh for josue
       ansible.builtin.git:
         repo: "{{ item.repo }}"
         dest: "{{ item.dest }}"
         version: master
+      tags:
+        - repos
       loop:
         - repo: https://github.com/vim-airline/vim-airline
           dest: ~/.vim/pack/dist/start/vim-airline
@@ -42,6 +50,25 @@
           dest: ~/.oh-my-zsh
         - repo: https://github.com/romkatv/powerlevel10k.git
           dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+
+    - name: Install vim Airline and oh-my-zsh for root
+      ansible.builtin.git:
+        repo: "{{ item.repo }}"
+        dest: "{{ item.dest }}"
+        version: master
+      become: true
+      tags:
+        - repos
+        - root-repos
+      loop:
+        - repo: https://github.com/vim-airline/vim-airline
+          dest: /root/.vim/pack/dist/start/vim-airline
+        - repo: https://github.com/vim-airline/vim-airline-themes
+          dest: /root/.vim/pack/dist/start/vim-airline-themes
+        - repo: https://github.com/ohmyzsh/ohmyzsh.git
+          dest: /root/.oh-my-zsh
+        - repo: https://github.com/romkatv/powerlevel10k.git
+          dest: /root/.oh-my-zsh/custom/themes/powerlevel10k
 
     - name: Set Git global vars
       community.general.git_config:
@@ -70,11 +97,21 @@
           dest: /etc/sudoers.d/josue-by-ansible
           mode: "0440"
 
-    - name: Create directories
+    - name: Create directories for user
       ansible.builtin.file:
         path: ~/.vim/colors
         state: directory
         mode: "0755"
+
+    - name: Create directories for root
+      ansible.builtin.file:
+        path: /root/.vim/colors
+        state: directory
+        mode: "0755"
+      become: true
+      tags:
+        - root
+        - root-files
 
     - name: Copy user files
       ansible.builtin.copy:
@@ -115,4 +152,43 @@
           mode: "0664"
         - src: files/.p10k.zsh
           dest: ~/.p10k.zsh
+          mode: "0664"
+
+    - name: Copy root files
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+      become: true
+      tags:
+        - root-files
+        - root
+      loop:
+        - src: files/ssh_config
+          dest: /root/.ssh/config
+          mode: "0700"
+        # aliases and helpers
+        - src: files/aliases
+          dest: /root/.aliases
+          mode: "0664"
+        - src: files/helpers
+          dest: /root/.helpers
+          mode: "0664"
+        # tmux
+        - src: files/tmux.conf
+          dest: /root/.tmux.conf
+          mode: "0664"
+        # vim
+        - src: files/.vimrc
+          dest: /root/.vimrc
+          mode: "0664"
+        - src: files/atom-dark-256.vim
+          dest: /root/.vim/colors/atom-dark-256.vim
+          mode: "0664"
+        # zsh
+        - src: files/.zshrc
+          dest: /root/.zshrc
+          mode: "0664"
+        - src: files/.p10k.zsh
+          dest: /root/.p10k.zsh
           mode: "0664"

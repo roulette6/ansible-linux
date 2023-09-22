@@ -50,3 +50,12 @@ Host c1-node1
 
 Host c1-node2
   HostName c1-node2.vm.jm
+
+Host cp46
+  HostName cp46.vm.jm
+
+Host node47
+  HostName node47.vm.jm
+
+Host node48
+  HostName node48.vm.jm

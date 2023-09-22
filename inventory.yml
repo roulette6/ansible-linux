@@ -19,6 +19,12 @@ all:
           ansible_host: c1-node1.vm.jm
         c1-node2:
           ansible_host: c1-node2.vm.jm
+        cp46:
+          ansible_host: cp46.vm.jm
+        node47:
+          ansible_host: node47.vm.jm
+        node48:
+          ansible_host: node48.vm.jm
     ubuntu:
       hosts:
         mini:
@@ -27,6 +33,9 @@ all:
         c1-cp1:
         c1-node1:
         c1-node2:
+        cp46:
+        node47:
+        node48:
         dmz-ubu:
     kube:
       hosts:
