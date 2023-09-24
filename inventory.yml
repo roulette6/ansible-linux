@@ -27,16 +27,16 @@ all:
           ansible_host: node48.vm.jm
     ubuntu:
       hosts:
+        dmz-ubu:
         mini:
         ubu1:
         ubu2:
         c1-cp1:
         c1-node1:
         c1-node2:
-        cp46:
-        node47:
-        node48:
-        dmz-ubu:
+        # cp46:
+        # node47:
+        # node48:
     kube:
       hosts:
         c1-cp1:

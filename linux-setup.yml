@@ -34,7 +34,7 @@
         - josue
         - root
 
-    - name: Install vim Airline and oh-my-zsh for josue
+    - name: Install vim Airline, oh-my-zsh, and TPM for josue
       ansible.builtin.git:
         repo: "{{ item.repo }}"
         dest: "{{ item.dest }}"
@@ -50,6 +50,8 @@
           dest: ~/.oh-my-zsh
         - repo: https://github.com/romkatv/powerlevel10k.git
           dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+        - repo: https://github.com/tmux-plugins/tpm
+          dest: ~/.tmux/plugins/tpm
 
     - name: Install vim Airline and oh-my-zsh for root
       ansible.builtin.git:
