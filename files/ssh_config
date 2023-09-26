@@ -32,30 +32,24 @@ Host eve1
 Host eve1-centos-vm
     HostName 192.168.128.102
 
-Host ubu1
-  HostName ubu1.vm.jm
-
-Host ubu2
-  HostName ubu2.vm.jm
-
 Host pydev
   user josue
   HostName pydev.vm.jm
 
-Host c1-cp1
-  HostName c1-cp1.vm.jm
+Host kub01
+  HostName kub01.vm.jm
 
-Host c1-node1
-  HostName c1-node1.vm.jm
+Host kub02
+  HostName kub02.vm.jm
 
-Host c1-node2
-  HostName c1-node2.vm.jm
+Host kub03
+  HostName kub03.vm.jm
 
-Host cp46
-  HostName cp46.vm.jm
+Host kub04
+  HostName kub04.vm.jm
 
-Host node47
-  HostName node47.vm.jm
+Host kub05
+  HostName kub05.vm.jm
 
-Host node48
-  HostName node48.vm.jm
+Host kub06
+  HostName kub06.vm.jm
