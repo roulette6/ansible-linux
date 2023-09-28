@@ -45,11 +45,3 @@ Host kub02
 Host kub03
   HostName kub03.vm.jm
 
-Host kub04
-  HostName kub04.vm.jm
-
-Host kub05
-  HostName kub05.vm.jm
-
-Host kub06
-  HostName kub06.vm.jm
