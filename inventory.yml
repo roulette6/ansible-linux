@@ -13,12 +13,6 @@ all:
           ansible_host: kub02.vm.jm
         kub03:
           ansible_host: kub03.vm.jm
-        kub04:
-          ansible_host: kub04.vm.jm
-        kub05:
-          ansible_host: kub05.vm.jm
-        kub06:
-          ansible_host: kub06.vm.jm
     ubuntu:
       hosts:
         dmz-ubu:
@@ -26,17 +20,11 @@ all:
         kub01:
         kub02:
         kub03:
-        kub04:
-        kub05:
-        kub06:
     kube:
       hosts:
         kub01:
         kub02:
         kub03:
-        kub04:
-        kub05:
-        kub06:
     aci:
       hosts:
         aci-sandbox:
