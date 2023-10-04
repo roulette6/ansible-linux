@@ -16,15 +16,16 @@ all:
     ubuntu:
       hosts:
         dmz-ubu:
+        kub01:
+        kub02:
+        # kub03:
+        mini:
+    k3s:
+      hosts:
         mini:
         kub01:
         kub02:
-        kub03:
-    kube:
-      hosts:
-        kub01:
-        kub02:
-        kub03:
+        # kub03:
     aci:
       hosts:
         aci-sandbox:
