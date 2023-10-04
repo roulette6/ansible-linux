@@ -18,9 +18,12 @@
           - zsh
           - vim=2:9.0.0749-0york0~22.04
           - tmux
+          - nfs-common
         state: present
         update_cache: true
       become: true
+      tags:
+        - packages
 
     - name: Change shell to zsh
       user:
