@@ -1,7 +1,7 @@
 ---
 # ansible-playbook linux-setup.yml --ask-pass
 - name: Set up Linux machines
-  hosts: ubuntu
+  hosts: docker
   gather_facts: false
 
   tasks:

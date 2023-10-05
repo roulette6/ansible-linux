@@ -13,6 +13,12 @@ all:
           ansible_host: kub02.vm.jm
         kub03:
           ansible_host: kub03.vm.jm
+        vdocker01:
+          ansible_host: vdocker01.jm
+        vdocker02:
+          ansible_host: vdocker02.jm
+        vdocker03:
+          ansible_host: vdocker03.jm
     ubuntu:
       hosts:
         dmz-ubu:
@@ -20,6 +26,14 @@ all:
         kub02:
         # kub03:
         mini:
+        vdocker01:
+        vdocker02:
+        vdocker03:
+    docker:
+      hosts:
+        vdocker01:
+        vdocker02:
+        vdocker03:
     k3s:
       hosts:
         mini:
