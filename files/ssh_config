@@ -45,3 +45,11 @@ Host kub02
 Host kub03
   HostName kub03.vm.jm
 
+Host vdocker01
+  HostName vdocker01.jm
+
+Host vdocker02
+  HostName vdocker02.jm
+
+Host vdocker03
+  HostName vdocker03.jm
