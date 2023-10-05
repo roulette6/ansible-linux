@@ -21,7 +21,7 @@ Host prox1
   User root
 
 Host prox2
-  HostName prox1.jm
+  HostName prox2.jm
   User root
 
 # virtual devices
