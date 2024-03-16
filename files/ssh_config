@@ -36,20 +36,5 @@ Host pydev
   user josue
   HostName pydev.vm.jm
 
-Host kub01
-  HostName kub01.vm.jm
-
-Host kub02
-  HostName kub02.vm.jm
-
-Host kub03
-  HostName kub03.vm.jm
-
-Host vdocker01
-  HostName vdocker01.jm
-
-Host vdocker02
-  HostName vdocker02.jm
-
-Host vdocker03
-  HostName vdocker03.jm
+Host docker1
+  HostName docker1.vm.jm
