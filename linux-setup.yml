@@ -1,7 +1,7 @@
 ---
 # ansible-playbook linux-setup.yml --ask-pass
-- name: Set up Linux machines
-  hosts: linux
+- name: Ubuntu installs
+  hosts: ubuntu
   gather_facts: false
 
   tasks:
@@ -11,7 +11,7 @@
         state: present
       become: true
 
-    - name: Install Ubuntu packages
+    - name: Install packages
       ansible.builtin.apt:
         pkg:
           - exa
@@ -19,12 +19,37 @@
           - vim=2:9.0.0749-0york0~22.04
           - tmux
           - nfs-common
+          - git
         state: present
         update_cache: true
       become: true
       tags:
         - packages
 
+- name: Fedora installs
+  hosts: fedora
+  gather_facts: false
+
+  tasks:
+    - name: Install packages
+      ansible.builtin.dnf:
+        pkg:
+          - exa
+          - zsh
+          - tmux
+          - nfs-utils
+          - git
+        state: present
+        update_cache: true
+      become: true
+      tags:
+        - packages
+
+- name: Set up systems
+  hosts: linux
+  gather_facts: false
+
+  tasks:
     - name: Change shell to zsh
       user:
         name: "{{ item }}"

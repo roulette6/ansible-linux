@@ -9,6 +9,11 @@ all:
           ansible_host: dmz-ubu.jm
         docker1:
           ansible_host: docker1.vm.jm
+        imac:
+          ansible_host: imac.jm
+    fedora:
+      hosts:
+        imac:
     ubuntu:
       hosts:
         dmz-ubu:
