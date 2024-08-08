@@ -5,10 +5,10 @@ all:
       hosts:
         mini:
           ansible_host: mini.jm
-        dmz-ubu:
-          ansible_host: dmz-ubu.jm
-        docker1:
-          ansible_host: docker1.vm.jm
+        pi:
+          ansible_host: pi.jm
+        g3mini:
+          ansible_host: g3mini.jm
         imac:
           ansible_host: imac.jm
     fedora:
@@ -16,13 +16,13 @@ all:
         imac:
     ubuntu:
       hosts:
-        dmz-ubu:
+        pi:
         mini:
-        docker1:
+        g3mini:
     docker:
       hosts:
         mini:
-        docker1:
+        g3mini:
     aci:
       hosts:
         aci-sandbox:

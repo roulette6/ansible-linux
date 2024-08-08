@@ -5,18 +5,11 @@
   gather_facts: false
 
   tasks:
-    - name: Add vim repo
-      ansible.builtin.apt_repository:
-        repo: ppa:jonathonf/vim
-        state: present
-      become: true
-
     - name: Install packages
       ansible.builtin.apt:
         pkg:
-          - exa
+          - eza
           - zsh
-          - vim=2:9.0.0749-0york0~22.04
           - tmux
           - nfs-common
           - git
