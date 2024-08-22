@@ -1,7 +1,7 @@
 ---
 # ansible-playbook linux-setup.yml --ask-pass
 - name: Ubuntu installs
-  hosts: ubuntu
+  hosts: k8s
   gather_facts: false
 
   tasks:
@@ -39,7 +39,7 @@
         - packages
 
 - name: Set up systems
-  hosts: linux
+  hosts: k8s
   gather_facts: false
 
   tasks:

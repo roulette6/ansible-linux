@@ -3,26 +3,35 @@ all:
   children:
     linux:
       hosts:
+        g3mini:
+          ansible_host: g3mini.jm
         mini:
           ansible_host: mini.jm
         pi:
           ansible_host: pi.jm
-        g3mini:
-          ansible_host: g3mini.jm
-        imac:
-          ansible_host: imac.jm
-    fedora:
-      hosts:
-        imac:
+        ubu1v:
+          ansible_host: ubu1v.jm
+        ubu2v:
+          ansible_host: ubu2v.jm
+        ubu3v:
+          ansible_host: ubu3v.jm
     ubuntu:
       hosts:
         pi:
         mini:
         g3mini:
+        ubu1v:
+        ubu2v:
+        ubu3v:
     docker:
       hosts:
         mini:
         g3mini:
+    k8s:
+      hosts:
+        ubu1v:
+        ubu2v:
+        ubu3v:
     aci:
       hosts:
         aci-sandbox:
