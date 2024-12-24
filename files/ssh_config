@@ -1,9 +1,6 @@
 Host eve1
-  HostName eve1.vm.jm
+  HostName eve1.jm
   User root
-
-Host eve1-centos-vm
-    HostName 192.168.128.102
 
 Host g3mini
   HostName g3mini.jm
