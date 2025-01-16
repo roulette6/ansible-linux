@@ -1,7 +1,8 @@
 ---
 # ansible-playbook linux-setup.yml --ask-pass
+
 - name: Ubuntu installs
-  hosts: k8s
+  hosts: "{{ hosts }}"
   gather_facts: false
 
   tasks:
@@ -27,7 +28,7 @@
     - name: Install packages
       ansible.builtin.dnf:
         pkg:
-          - exa
+          - eza
           - zsh
           - tmux
           - nfs-utils
@@ -39,7 +40,7 @@
         - packages
 
 - name: Set up systems
-  hosts: k8s
+  hosts: "{{ hosts }}"
   gather_facts: false
 
   tasks:
