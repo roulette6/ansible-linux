@@ -21,6 +21,10 @@ sed_clean1="s_::.*__ ; s_, \[.*__ ; s_0.0.0.0:__g"
 alias docknames='docker ps --format "{{.Names}}" | sort'
 alias dockstatus='docker ps -a --format "$docker_format_1" | sed "s_(v_\t(v_"'
 alias dockports='docker ps -a --format "$docker_format_2" | sed "$sed_clean1" | sed '\''s_,\s*$__'\'
+alias dockre='docker container restart'
+alias dockstop='docker container stop'
+alias dockstart='docker container start'
+#
 alias promreload='curl -X POST http://g3mini.jm:9090/-/reload'
 
 # Locations

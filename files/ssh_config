@@ -1,27 +1,27 @@
 Host eve1
-  HostName eve1.jm
+  HostName eve1.home.101203.xyz
   User root
 
 Host g3mini
-  HostName g3mini.jm
+  HostName g3mini.home.101203.xyz
 
 Host jm-macbook
-  HostName jm-macbook.jm
+  HostName jm-macbook.home.101203.xyz
 
 Host jm-pc
-  HostName jm-pc.jm
+  HostName jm-pc.home.101203.xyz
 
 Host mini
-  HostName mini.jm
+  HostName mini.home.101203.xyz
   User josue
 
 Host nas1
-  HostName nas1.jm
+  HostName nas1.home.101203.xyz
   User josue-admin
 
 Host pi
-  HostName pi.jm
+  HostName pi.home.101203.xyz
 
 Host pydev
   user josue
-  HostName pydev.vm.jm
+  HostName pydev.home.101203.xyz

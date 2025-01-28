@@ -4,9 +4,9 @@ all:
     linux:
       hosts:
         g3mini:
-          ansible_host: g3mini.jm
+          ansible_host: g3mini.home.101203.xyz
         mini:
-          ansible_host: mini.jm
+          ansible_host: mini.home.101203.xyz
     ubuntu:
       hosts:
         mini:
@@ -20,6 +20,6 @@ all:
     aci:
       hosts:
         aci-sandbox:
-          host_fqdn: aci.vm.jm
+          host_fqdn: aci.home.101203.xyz
           ansible_user: admin
           ansible_password: 1234QWer

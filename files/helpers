@@ -12,3 +12,17 @@ mkcd() {
 
     cd "$directory" || return 1  # Change to the directory, or return an error if it fails
 }
+
+backup_netbox() {
+    cd ~/containers/netbox-docker
+
+    # backup db
+    docker compose exec -T postgres sh -c \
+    'pg_dump -cU $POSTGRES_USER $POSTGRES_DB' | \
+    gzip > /mnt/nas1-mini/db-backups/netbox-db-dump_$(date +'%Y-%m-%d_%H-%M-%S').sql.gz
+
+    # backup media
+    docker compose exec -T netbox tar c -jf - -C \
+    /opt/netbox/netbox/media ./ > \
+    /mnt/nas1-mini/db-backups/netbox-media-backup_$(date +'%Y-%m-%d_%H-%M-%S').tar.bz2
+}
