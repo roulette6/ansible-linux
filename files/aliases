@@ -1,20 +1,22 @@
 # helpers
 alias aliases='vim ~/.aliases'
 alias h='history'
-alias ll='exa -lahgF --icons'
-alias ls='exa -1 --sort=extension --icons'
-alias tree='exa -lhgT --icons'
+alias idunno='echo "¯\_(ツ)_/¯"'
 alias listports='ss -ln4 | cut -d ":" -f 2 | awk "{print \$1}" | sort -nu'
+alias ll='eza -lahgF --icons'
+alias ls='eza -1 --sort=extension --icons'
+alias myip='curl ipinfo.io/ip'
+alias reboot='sudo reboot now'
+alias shutdown='sudo shutdown now'
 alias src='source ~/.zshrc'
+alias tree='eza -lhgT --icons'
 alias tsrc='tmux source-file ~/.tmux.conf'
 alias up='cd ..'
-alias zshrc='vim ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
-alias myip='curl ipinfo.io/ip'
-alias idunno='echo "¯\_(ツ)_/¯"'
+alias zshrc='vim ~/.zshrc'
 
 # Docker, etc.
-docker_format_1="table {{.Names}}\t{{.Status}}\t{{.Size}}"
+docker_format_1="table {{.Names}}\t{{.Status}}\t{{.ID}}"
 docker_format_2="table {{.Names}}\t{{.Ports}}"
 sed_clean1="s_::.*__ ; s_, \[.*__ ; s_0.0.0.0:__g"
 #
