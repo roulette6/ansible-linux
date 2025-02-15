@@ -25,3 +25,7 @@ Host pi
 Host pydev
   user josue
   HostName pydev.home.101203.xyz
+
+Host tiny
+  user root
+  HostName tiny.home.101203.xyz

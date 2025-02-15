@@ -1,3 +1,11 @@
+# locations
+alias ans='cd ~/code/ansible-linux; tree'
+alias coder='cd ~/code; pwd'
+alias cont='cd ~/containers && ls'
+alias home='cd ~'
+alias stacks='cd ~/containers/stacks && ls'
+alias up='cd ..'
+
 # helpers
 alias aliases='vim ~/.aliases'
 alias h='history'
@@ -10,26 +18,22 @@ alias reboot='sudo reboot now'
 alias shutdown='sudo shutdown now'
 alias src='source ~/.zshrc'
 alias tree='eza -lhgT --icons'
+alias treedu='\tree -h --du --dirsfirst -L 2'
 alias tsrc='tmux source-file ~/.tmux.conf'
-alias up='cd ..'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 
 # Docker, etc.
 docker_format_1="table {{.Names}}\t{{.Status}}\t{{.ID}}"
 docker_format_2="table {{.Names}}\t{{.Ports}}"
-sed_clean1="s_::.*__ ; s_, \[.*__ ; s_0.0.0.0:__g"
+sed_clean1="s_0.0.0.0:__g ; s_(\[|\])__g  ; s_:::[0-9]{2,5}..[0-9]{2,5}.[tu][cd]p__g ; s_:::[0-9]{2,5}.[0-9]{2,5}->[0-9]{2,5}.[0-9]{2,5}...p__g ; s_,__g"
 #
 alias docknames='docker ps --format "{{.Names}}" | sort'
 alias dockstatus='docker ps -a --format "$docker_format_1" | sed "s_(v_\t(v_"'
-alias dockports='docker ps -a --format "$docker_format_2" | sed "$sed_clean1" | sed '\''s_,\s*$__'\'
+alias dockports='docker ps -a --format "$docker_format_2" | sed -E "$sed_clean2"'
 alias dockre='docker container restart'
 alias dockstop='docker container stop'
 alias dockstart='docker container start'
 #
-alias promreload='curl -X POST http://g3mini.jm:9090/-/reload'
-
-# Locations
-alias coder='cd ~/code; pwd'
-alias home='cd ~'
-alias cont='cd ~/containers && ls'
+alias preload='curl -X POST http://g3mini.jm:9090/-/reload'
+alias areload='curl -X POST http://localhost:12345/-/reload'
