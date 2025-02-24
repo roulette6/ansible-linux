@@ -30,7 +30,7 @@ sed_clean1="s_0.0.0.0:__g ; s_(\[|\])__g  ; s_:::[0-9]{2,5}..[0-9]{2,5}.[tu][cd]
 #
 alias docknames='docker ps --format "{{.Names}}" | sort'
 alias dockstatus='docker ps -a --format "$docker_format_1" | sed "s_(v_\t(v_"'
-alias dockports='docker ps -a --format "$docker_format_2" | sed -E "$sed_clean2"'
+alias dockports='docker ps -a --format "$docker_format_2" | sed -E "$sed_clean1"'
 alias dockre='docker container restart'
 alias dockstop='docker container stop'
 alias dockstart='docker container start'
