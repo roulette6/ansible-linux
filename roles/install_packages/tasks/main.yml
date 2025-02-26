@@ -1,0 +1,13 @@
+---
+# tasks file for install-packages
+- name: Install packages
+  ansible.builtin.apt:
+    pkg:
+      - eza
+      - zsh
+      - tmux
+      - nfs-common
+      - cifs-utils
+      - git
+    state: present
+    update_cache: true

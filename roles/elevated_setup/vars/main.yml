@@ -1,0 +1,20 @@
+---
+# vars file for roles/setup-user
+directory_info:
+  - directory: /home/josue/.vim/colors
+    owner: josue
+  - directory: /home/josue/.config/starship
+    owner: josue
+  - directory: /root/.vim/colors
+    owner: root
+  - directory: /root/.config/starship
+    owner: root
+
+git_repos:
+  # root
+  - repo: https://github.com/vim-airline/vim-airline
+    dest: /root/.vim/pack/dist/start/vim-airline
+  - repo: https://github.com/vim-airline/vim-airline-themes
+    dest: /root/.vim/pack/dist/start/vim-airline-themes
+  - repo: https://github.com/tmux-plugins/tpm
+    dest: /root/.tmux/plugins/tpm

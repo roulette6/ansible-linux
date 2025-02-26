@@ -1,0 +1,11 @@
+---
+# vars file for roles/nonroot-setup
+
+git_repos:
+  # josue
+  - repo: https://github.com/vim-airline/vim-airline
+    dest: ~/.vim/pack/dist/start/vim-airline
+  - repo: https://github.com/vim-airline/vim-airline-themes
+    dest: ~/.vim/pack/dist/start/vim-airline-themes
+  - repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm

@@ -3,18 +3,21 @@ all:
   children:
     linux:
       hosts:
-        g3mini:
-          ansible_host: g3mini.home.101203.xyz
-        mini:
-          ansible_host: mini.home.101203.xyz
-    ubuntu:
+        ansible:
+          ansible_host: ansible.home.101203.xyz
+        docker1:
+          ansible_host: docker1.home.101203.xyz
+        docker2:
+          ansible_host: docker2.home.101203.xyz
+    debian:
       hosts:
-        mini:
-        g3mini:
+        ansible:
+        docker1:
+        docker2:
     docker:
       hosts:
-        mini:
-        g3mini:
+        docker1:
+        docker2:
     k8s:
       hosts:
     aci:

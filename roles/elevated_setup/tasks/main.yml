@@ -1,0 +1,38 @@
+---
+# tasks file for roles/setup-user
+
+- name: Change shell to zsh
+  ansible.builtin.user:
+    name: "{{ item }}"
+    shell: /bin/zsh
+  loop:
+    - josue
+    - root
+
+- name: Add josue to sudo group
+  ansible.builtin.user:
+    name: josue
+    groups: sudo
+    append: yes
+
+- name: Set sudoers without password
+  ansible.builtin.copy:
+    src: "files/sudoers"
+    dest: "/etc/sudoers.d/sudoers"
+    mode: "0440"
+
+- name: Create directories for user
+  ansible.builtin.file:
+    path: "{{ item.directory }}"
+    state: directory
+    owner: "{{ item.owner }}"
+    group: "{{ item.owner }}"
+    mode: "0755"
+  loop: "{{ directory_info }}"
+
+- name: Install vim Airline and TPM
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    version: master
+  loop: "{{ git_repos }}"

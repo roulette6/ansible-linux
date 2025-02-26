@@ -1,8 +1,0 @@
-# jm-pc
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKsb6haNwmkC5mE+Bs3xDewcGv3jiysruEFJWDNWkKtc jm_computing@fastmail.com
-# 1Password: Terminus SSH Key
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOOWBiuNbvSPbDEia4DJLgOt3Iwqvqj/OuEutTQO/hiN
-# jm-macbook
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILtV6lhej1DEy1REc1vGWp5od6AxXWSQRWIYXlf9iuG7 josue@jm-macbook.jm
-# jm-mini
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK0uf/E+9U2Y4XzOOvMw/Krkq+YH1KdFQJV4wT/i0iXX josue@mini

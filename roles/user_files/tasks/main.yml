@@ -1,0 +1,11 @@
+---
+# tasks file for roles/user-files
+
+- name: Copy user files
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.user }}"
+    group: "{{ item.user }}"
+    mode: "{{ item.mode }}"
+  loop: "{{ user_files }}"

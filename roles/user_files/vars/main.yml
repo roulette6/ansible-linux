@@ -1,0 +1,78 @@
+---
+# vars file for roles/user-files
+
+user_files:
+  # josue
+  # SSH stuff
+  - src: files/authorized_keys
+    dest: /home/josue/.ssh/authorized_keys
+    user: josue
+    mode: "0600"
+  - src: files/ssh_config
+    dest: /home/josue/.ssh/config
+    user: josue
+    mode: "0600"
+  # aliases and helpers
+  - src: files/aliases
+    dest: /home/josue/.aliases
+    user: josue
+    mode: "0664"
+  - src: files/helpers
+    dest: /home/josue/.helpers
+    user: josue
+    mode: "0664"
+  # tmux
+  - src: files/tmux.conf
+    dest: /home/josue/.tmux.conf
+    user: josue
+    mode: "0664"
+  # vim stuff
+  - src: files/.vimrc
+    dest: /home/josue/.vimrc
+    user: josue
+    mode: "0664"
+  - src: files/atom-dark-256.vim
+    dest: /home/josue/.vim/colors/atom-dark-256.vim
+    user: josue
+    mode: "0664"
+  # zsh stuff
+  - src: files/.zshrc
+    dest: /home/josue/.zshrc
+    user: josue
+    mode: "0664"
+  - src: files/starship.toml
+    dest: /home/josue/.config/starship/starship.toml
+    user: josue
+    mode: "0664"
+  # root aliases
+  - src: files/aliases
+    dest: /root/.aliases
+    user: root
+    mode: "0664"
+  - src: files/helpers
+    dest: /root/.helpers
+    user: root
+    mode: "0664"
+  # root tmux
+  - src: files/tmux.conf
+    dest: /root/.tmux.conf
+    user: root
+    mode: "0664"
+  # root vim
+  - src: files/.vimrc
+    dest: /root/.vimrc
+    user: root
+    mode: "0664"
+  - src: files/atom-dark-256.vim
+    dest: /root/.vim/colors/atom-dark-256.vim
+    user: root
+    mode: "0664"
+  # root zsh stuff
+  - src: files/.zshrc
+    dest: /root/.zshrc
+    user: root
+    mode: "0664"
+  - src: files/starship.toml
+    dest: /root/.config/starship/starship.toml
+    user: root
+    mode: "0664"

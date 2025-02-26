@@ -1,0 +1,22 @@
+---
+# tasks file for roles/nonroot-setup
+
+- name: Set Git global vars
+  community.general.git_config:
+    name: "{{ item.name }}"
+    scope: global
+    value: "{{ item.value }}"
+  loop:
+    - name: init.defaultBranch
+      value: main
+    - name: user.name
+      value: "Josue M"
+    - name: user.email
+      value: "josue_dev@fastmail.com"
+
+- name: Install vim Airline and TPM
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    version: master
+  loop: "{{ git_repos }}"

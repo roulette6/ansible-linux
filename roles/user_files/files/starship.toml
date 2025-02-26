@@ -1,0 +1,34 @@
+# https://starship.rs/config/
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$cmd_duration\
+$line_break\
+$character"""
+
+[fill]
+symbol = ' '
+
+[username]
+style_user = 'fg:blue'
+style_root = 'fg:green'
+format = '[$user]($style)'
+
+[hostname]
+style = 'fg:white'
+format = '[@$hostname ]($style)'
+
+[directory]
+style = 'bold fg:blue'
+format = '[$path ]($style)'
+truncation_length = 3
+truncation_symbol = '.../'
+truncate_to_repo = false
+
+[git_branch]
+style = 'fg:green'
+format = '[on](white) [$symbol$branch ]($style)'
